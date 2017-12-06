@@ -1,0 +1,54 @@
+    1  passwd root
+    2  vi /etc/ssh/sshd_conf
+    3  vi /etc/ssh/sshd_config 
+    4  service ssh status
+    5  service ssh stop
+    6  service ssh restart
+    7  hostname
+    8  hostname -s
+    9  hostname -d
+   10  hostnamectl set-hostname ansiblemaster
+   11  hostname -s
+   12  apt-get update
+   13  apt-get install software-properties-common
+   14  apt-add-repository ppa:ansible/ansible
+   15  apt-get update
+   16  apt-get install ansible
+   17  vi /etc/hosts
+   18  ansible slave1 -m ping
+   19  ssh-keygen
+   20  ssh-copy-id root@10.10.10.100
+   21  ssh-copy-id root@10.10.10.150
+   22  ssh root@10.10.10.150
+   23  ansible slave1 -m ping
+   24  vi /etc/ansible/hosts
+   25  ansible slave1 -m ping
+   26  ansible all -m ping
+   27  vi /etc/ansible/hosts
+   28  ansible all -m ping
+   29  ssh-copy-id root@localhost
+   30  ansible all -m ping
+   31  ping slave1
+   32  vi /etc/hosts
+   33  ls
+   34  cd /var/www/html
+   35  ls -a
+   36  apt-get install apache2
+   37  cd /var/www/html
+   38  ls
+   39  cd
+   40  ansible slave1 apt -a "name=apache2 state=present"
+   41  ansible slave1 -m apt -a "name=apache2 state=present"
+   42  pwd
+   43  mkdir dir1
+   44  ls
+   45  cd dir1/
+   46  touch file1
+   47  ls
+   48  pwd
+   49  cd
+   50  ansible slave1 -m copy -a "src=/root/dir1/file1 dest=/root"
+   51  ansible slave1 -m copy -a "src=/root/dir1 dest=/root"
+   52  ansible all -m service -a "name=apache2 state=restarted"
+   53  history
+   54  history > history.txt

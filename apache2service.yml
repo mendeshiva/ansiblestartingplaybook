@@ -1,0 +1,7 @@
+---
+ - hosts: all
+   tasks:
+    - name: install apache2
+      apt: name=apache2 state=latest
+    - name: service start
+      service: name=apache2 state=restarted
